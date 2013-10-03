@@ -15,7 +15,7 @@
                         departs : {city : "Los Angeles, CA", day : "12/19/2013", time : "08:00 AM"},
                         arrives : {city : "San Francisco, CA", day : "12/19/2013", time : "5:00 PM"}}
                 ],
-                destination : {name : "The Tech Store", address : {street : "55 Fourth Street", city : "San Francisco", state : "CA", zip : "94103"},
+                destination : {name : "The Tech Store", address : {street : "55 Fourth Street", city : "San Francisco", state : "CA", zip : "94103"}},
                 total : "$23500.00"
             },
             124:
@@ -28,7 +28,7 @@
                         departs : {city : "Las Vegas, NV", day : "09/8/2013", time : "08:00 AM"},
                         arrives : {city : "San Francisco, CA", day : "09/10/2013", time : "5:00 PM"}}
                 ],
-                destination : {name : "DigiMedia", address : {street : "150 Van Ness St", city : "San Francisco", state : "CA", zip : "94134"},
+                destination : {name : "DigiMedia", address : {street : "150 Van Ness St", city : "San Francisco", state : "CA", zip : "94134"}},
                 total : "$17750.00"
             },
             125:
@@ -38,7 +38,7 @@
                         departs : {city : "Salt Lake City, UT", day : "06/14/2013", time : "08:00 AM"},
                         arrives : {city : "San Francisco, CA", day : "06/18/2013", time : "09:30 AM"}}
                 ],
-                destination : {name : "Munder Difflin Paperless Company", address : {street : "160 Brannan St", city : "San Francisco", state : "CA", zip : "94103"},
+                destination : {name : "Munder Difflin Paperless Company", address : {street : "160 Brannan St", city : "San Francisco", state : "CA", zip : "94103"}},
                 total : "$13000.00"
             },
             126:
@@ -51,7 +51,7 @@
                         departs : {city : "San Diego, CA", day : "04/10/2013", time : "03:00 PM"},
                         arrives : {city : "San Francisco, CA", day : "04/12/2013", time : "5:30 PM"}}
                 ],
-                destination : {name : "Salesforce", address : {street : "1 Market St", city : "San Francisco", state : "CA", zip : "94105"},
+                destination : {name : "Salesforce", address : {street : "1 Market St", city : "San Francisco", state : "CA", zip : "94105"}},
                 total : "$3300.00"
             }
         };
