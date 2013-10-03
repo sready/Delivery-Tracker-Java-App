@@ -93,10 +93,8 @@
                         text += "Departs: " + f.departs.city + ": " + f.departs.day + " " + f.departs.time + "\n";
                         text += "Arrives: " + f.arrives.city + ": " + f.departs.day + " " + f.arrives.time + "\n\n";
                     }
-                    text += "Hotel: " + it.destination.name + ", " + it.destination.address.street + ", " + it.destination.address.city + ", " + it.destination.address.state + "\n";
-                    text += "Room " + it.destination.rooms + ", Days " + it.destination.days + ", Guests 1\n";
-                    text += "Daily Rate: " + it.destination.rate + "\n";
-                    text += "Check In: " + it.destination.checkin;
+                    text += "Shipped To: " + it.destination.name + ", " + it.destination.address.street + ", " + it.destination.address.city + ", " + it.destination.address.state + "\n";
+                    text += "Total Cost: " + it.total;
 
                 return text;
             }
@@ -204,15 +202,15 @@
                     else if ("link" === action) {
                         p.feedItemType = "LinkPost";
                         p.auxText = "Please Approve my trip: " + shipments[shipment].description;
-                        p.url = "https://canvas-publisher-feed.herokuapp.com/signed-request.jsp?intinerary=" + shipment;
+                        p.url = "https://canvas-publisher-feed.herokuapp.com/signed-request.jsp?shipment=" + shipment;
                         p.urlName = shipments[shipment].description;
                     }
                     else if ("approval" === action) {
                          p.feedItemType = "CanvasPost";
-                         p.auxText = "Please Approve my trip: " + shipments[shipment].description;
+                         p.auxText = "Please approve this shipment: " + shipments[shipment].description;
                          p.namespace =  sr.context.application.namespace;
                          p.developerName =  sr.context.application.developerName;
-                         p.thumbnailUrl = "https://icons.iconarchive.com/icons/aha-soft/perfect-transport/48/Airplane-icon.png";
+                         p.thumbnailUrl = "https://cdn1.iconfinder.com/data/icons/VISTA/project_managment/png/48/deliverables.png";
                          p.parameters =  "{\"shipment\":\"" + shipment + "\"}";
                          p.title =  "Shipment - " +shipments[shipment].description;
                          p.description = "This is a travel shipment for Shipment - " + shipments[shipment].description + ".  Click the link to open the Canvas App.";
