@@ -202,7 +202,7 @@
                     else if ("link" === action) {
                         p.feedItemType = "LinkPost";
                         p.auxText = "Please Approve my trip: " + shipments[shipment].description;
-                        p.url = "https://canvas-publisher-feed.herokuapp.com/signed-request.jsp?shipment=" + shipment;
+                        p.url = "https://immense-springs-2619.herokuapp.com/signed-request.jsp?shipment=" + shipment; /* change this to your heroku app */
                         p.urlName = shipments[shipment].description;
                     }
                     else if ("approval" === action) {
