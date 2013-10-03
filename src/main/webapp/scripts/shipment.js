@@ -6,59 +6,52 @@
 
     var shipments = {
             123:
-            {id : 123, status : "Waiting",  description : "Release Planning at HQ",  date: "09/20/2013",
-                flights : [
-                    {airline : "United", flight : "UA702",
-                        departs : {city : "Denver, CO", airport : "DEN", day : "09/20/2013", time : "08:15 AM"},
-                        arrives : {city : "San Francisco, CA", airport : "SFO", day : "09/20/2013", time : "09:30 AM"}},
-                    {airline : "United", flight : "UA123",
-                        departs : {city : "San Francisco, CA",airport : "SFO", day : "09/23/2013", time : "07:53 PM"},
-                        arrives : {city : "Denver, CO", airport : "DEN", day : "09/23/2013", time : "10:30 PM"}}
+            {id : 123, status : "Waiting",  description : "Cellular Accessories and Phones",  date: "12/20/2013",
+                trucks : [
+                    {truck : "Box Truck 304", driverNumber : "D4702",
+                        departs : {city : "Denver, CO", day : "12/18/2013", time : "08:15 AM"},
+                        arrives : {city : "San Francisco, CA", day : "09/20/2013", time : "09:30 AM"}},
+                    {truck : "Box Truck 512", driverNumber : "D0123",
+                        departs : {city : "Los Angeles, CA", day : "12/19/2013", time : "08:00 AM"},
+                        arrives : {city : "San Francisco, CA", day : "12/19/2013", time : "5:00 PM"}}
                 ],
-                hotel : {name : "Marriott Marquis", address : {street : "55 Fourth Street", city : "San Francisco", state : "CA", zip : "94103"},
-                    checkin : "09/01/2013", days : "2", rooms : "1", rate : "$230 USD"},
-                total : "$2300.00"
+                destination : {name : "The Tech Store", address : {street : "55 Fourth Street", city : "San Francisco", state : "CA", zip : "94103"},
+                total : "$23500.00"
             },
             124:
-            {id : 124, status : "Approved", description : "Sales Kickoff - Vegas",  date: "09/10/2013",
-                flights : [
-                    {airline : "Southwest", flight : "UA702",
-                        departs : {city : "Denver, CO", airport : "DEN", day : "09/10/2013", time : "08:15 AM"},
-                        arrives : {city : "Las Vegas, NV", airport : "SFO", day : "09/10/2013", time : "09:30 AM"}},
-                    {airline : "Southwest", flight : "UA123",
-                        departs : {city : "Las Vegas, NV", airport : "SFO", day : "09/14/2013", time : "07:53 PM"},
-                        arrives : {city : "Denver, CO", airport : "DEN", day : "09/14/2013", time : "10:30 PM"}}
+            {id : 124, status : "Approved", description : "Laptop Supplies",  date: "09/10/2013",
+                trucks : [
+                    {truck : "Bus 005", driverNumber : "D2702",
+                        departs : {city : "Austin, TX", day : "09/5/2013", time : "08:15 AM"},
+                        arrives : {city : "San Francisco, CA", day : "09/10/2013", time : "09:30 AM"}},
+                    {truck : "Lowboy 201", driverNumber : "UA123",
+                        departs : {city : "Las Vegas, NV", day : "09/8/2013", time : "08:00 AM"},
+                        arrives : {city : "San Francisco, CA", day : "09/10/2013", time : "5:00 PM"}}
                 ],
-                hotel : {name : "Cosmopolitan", address : {street : "Strip", city : "Las Vegas", state : "NV", zip : "84103"},
-                    checkin : "09/01/2013", days : "1", rooms : "1", rate : "$530 USD"},
-                total : "$1500.00"
+                destination : {name : "DigiMedia", address : {street : "150 Van Ness St", city : "San Francisco", state : "CA", zip : "94134"},
+                total : "$17750.00"
             },
             125:
-            {id : 125, status : "Complete", description : "Trip to HQ Sprint Planning",  date: "06/18/2013",
-                flights : [
-                    {airline : "Delta", flight : "UA702",
-                        departs : {city : "Denver, CO", airport : "DEN", day : "06/18/2013", time : "08:15 AM"},
-                        arrives : {city : "San Francisco, CA", airport : "SFO", day : "06/18/2013", time : "09:30 AM"}},
-                    {airline : "Delta", flight : "UA123",
-                        departs : {city : "San Francisco, CA", airport : "SFO", day : "06/22/2013", time : "07:53 PM"},
-                        arrives : {city : "Denver, CO", airport : "DEN", day : "06/22/2013", time : "10:30 PM"}}
+            {id : 125, status : "Complete", description : "Tablets",  date: "06/18/2013",
+                trucks : [
+                    {truck : "Box Truck 117", driverNumber : "D6702",
+                        departs : {city : "Salt Lake City, UT", day : "06/14/2013", time : "08:00 AM"},
+                        arrives : {city : "San Francisco, CA", day : "06/18/2013", time : "09:30 AM"}}
                 ],
-                hotel : {name : "Marriott Marquis", address : {street : "55 Fourth Street", city : "San Francisco", state : "CA", zip : "94103"},
-                    checkin : "09/01/2013", days : "2", rooms : "1", rate : "$420 USD"},
-                total : "$1300.00"
+                destination : {name : "Munder Difflin Paperless Company", address : {street : "160 Brannan St", city : "San Francisco", state : "CA", zip : "94103"},
+                total : "$13000.00"
             },
             126:
-            {id : 126, status : "Complete", description : "Hawaii Vacation",  date: "04/02/2013",
-                flights : [
-                    {airline : "United", flight : "UA702",
-                        departs : {city : "Denver, CO", airport : "DEN", day : "04/02/2013", time : "08:15 AM"},
-                        arrives : {city : "Honolulu, HI", airport : "SFO", day : "04/02/2013", time : "09:30 AM"}},
-                    {airline : "United", flight : "UA123",
-                        departs : {city : "Honolulu, HI", airport : "SFO", day : "04/12/2013", time : "07:53 PM"},
-                        arrives : {city : "Denver, CO", airport : "DEN", day : "04/12/2013", time : "10:30 PM"}}
+            {id : 126, status : "Complete", description : "TVs, Projectors, and Desktops, oh my!",  date: "04/02/2013",
+                trucks : [
+                    {truck : "Bus 006", driverNumber : "D2202",
+                        departs : {city : "Portland, OR", day : "04/02/2013", time : "08:15 AM"},
+                        arrives : {city : "San Francisco, CA", day : "04/05/2013", time : "09:30 AM"}},
+                    {truck : "Box Truck 215", driverNumber : "UA123",
+                        departs : {city : "San Diego, CA", day : "04/10/2013", time : "03:00 PM"},
+                        arrives : {city : "San Francisco, CA", day : "04/12/2013", time : "5:30 PM"}}
                 ],
-                hotel : {name : "Waikiki Beach Marriott", address : {street : "2552 Kalakaua Avenue", city : "Oahu", state : "HI", zip : "96815"},
-                    checkin : "09/01/2013", days : "3", rooms : "1", rate : "$660 USD"},
+                destination : {name : "Salesforce", address : {street : "1 Market St", city : "San Francisco", state : "CA", zip : "94105"},
                 total : "$3300.00"
             }
         };
@@ -94,17 +87,16 @@
                 var text = "My Shipment For: " + it.description + "\n";
                 	text += "Status: " + it.status + "\n";
                 	text += "Date: " + it.date + "\n\n";
-                    for (var i = 0; i < it.flights.length; i++) {
-                        var f = it.flights[i];
-                        text += "Flight: " + f.airline + " " + f.flight + "- " + f.departs.city + " (" + f.departs.airport + ") to " +
-                                f.arrives.city + " (" + f.arrives.airport +")\n";
+                    for (var i = 0; i < it.trucks.length; i++) {
+                        var f = it.trucks[i];
+                        text += "Truck: " + f.truck + " " + f.driverNumber + "- " + f.departs.city +"\n";
                         text += "Departs: " + f.departs.city + ": " + f.departs.day + " " + f.departs.time + "\n";
                         text += "Arrives: " + f.arrives.city + ": " + f.departs.day + " " + f.arrives.time + "\n\n";
                     }
-                    text += "Hotel: " + it.hotel.name + ", " + it.hotel.address.street + ", " + it.hotel.address.city + ", " + it.hotel.address.state + "\n";
-                    text += "Room " + it.hotel.rooms + ", Days " + it.hotel.days + ", Guests 1\n";
-                    text += "Daily Rate: " + it.hotel.rate + "\n";
-                    text += "Check In: " + it.hotel.checkin;
+                    text += "Hotel: " + it.destination.name + ", " + it.destination.address.street + ", " + it.destination.address.city + ", " + it.destination.address.state + "\n";
+                    text += "Room " + it.destination.rooms + ", Days " + it.destination.days + ", Guests 1\n";
+                    text += "Daily Rate: " + it.destination.rate + "\n";
+                    text += "Check In: " + it.destination.checkin;
 
                 return text;
             }
