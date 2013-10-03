@@ -47,7 +47,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
     <script type="text/javascript" src="scripts/json2.js"></script>
-    <script type="text/javascript" src="scripts/itinerary.js"></script>
+    <script type="text/javascript" src="scripts/shipment.js"></script>
 
     <script>
         var module;
@@ -71,18 +71,18 @@ POSSIBILITY OF SUCH DAMAGE.
 
             console.log("JQuery Ready...");
             getItin();
-            var id = (!!sr) ? (!!sr.context.environment.parameters.itinerary ? sr.context.environment.parameters.itinerary : ((!!urlParams["itinerary"]) ? urlParams["itinerary"] : "123")) : ((!!urlParams["itinerary"]) ? urlParams["itinerary"] : "123");
+            var id = (!!sr) ? (!!sr.context.environment.parameters.shipment ? sr.context.environment.parameters.shipment : ((!!urlParams["shipment"]) ? urlParams["shipment"] : "123")) : ((!!urlParams["shipment"]) ? urlParams["shipment"] : "123");
             console.log("SR: " + sr);
-            console.log("sr.context.environment.parameters.itinerary: " + sr.context.environment.parameters.itinerary);
+            console.log("sr.context.environment.parameters.shipment: " + sr.context.environment.parameters.shipment);
             console.log("urlParams: " + urlParams); 
-            console.log("Itinerary:" + id);
+            console.log("Shipment:" + id);
             module.approve(id);
 
         });
         
         Sfdc.canvas(function() {
             console.log("Canvas Ready...");
-            module = itinerary.instance(sr);
+            module = shipment.instance(sr);
             Sfdc.canvas.client.subscribe(sr.client, module.subscriptions);
         });
     </script>

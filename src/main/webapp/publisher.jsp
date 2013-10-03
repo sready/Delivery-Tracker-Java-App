@@ -66,7 +66,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
     <script type="text/javascript" src="js/jquery.chromatable.js"></script>
     <script type="text/javascript" src="scripts/json2.js"></script>
-    <script type="text/javascript" src="scripts/itinerary.js"></script>
+    <script type="text/javascript" src="scripts/shipment.js"></script>
 
     <script>
         var module;
@@ -76,7 +76,7 @@ POSSIBILITY OF SUCH DAMAGE.
         });
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
-            module = itinerary.instance(sr);
+            module = shipment.instance(sr);
             Sfdc.canvas.client.subscribe(sr.client, module.subscriptions);
             Sfdc.canvas.client.resize(sr.client, {height : "225px"});
             console.log("Canvas Done....");
@@ -86,8 +86,8 @@ POSSIBILITY OF SUCH DAMAGE.
 </head>
 <body>
 <div class="clear">
-    <h3>Itineraries</h3>
-    <div id="itinerariesdiv" class="show">
+    <h3>Shipments</h3>
+    <div id="shipmentsdiv" class="show">
     	<table id="reservations" width="100%" border="0" cellspacing="0" cellpadding="0">
 	        <thead>
         	<tr>
