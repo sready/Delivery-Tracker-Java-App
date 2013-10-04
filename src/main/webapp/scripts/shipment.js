@@ -217,7 +217,7 @@
                          p.description = "This is a travel shipment for Shipment - " + shipments[shipment].description + ".  Click the link to open the Canvas App.";
                     }
 
-                    console.log(JSON.stringify("\n\n\n"+ p, null, 4));
+                    console.log("\n\n"+JSON.stringify(p, null, 4));
                     
                     // Note: we can extend the payload here to include more then just value.
                     $$.client.publish(sr.client, {name : 'publisher.setPayload', payload : p});
