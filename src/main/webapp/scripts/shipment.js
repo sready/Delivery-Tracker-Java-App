@@ -214,7 +214,7 @@
                          p.thumbnailUrl = "https://cdn1.iconfinder.com/data/icons/VISTA/project_managment/png/48/deliverables.png";
                          p.parameters =  "{\"shipment\":\"" + shipment + "\"}";
                          p.title = shipments[shipment].description;
-                         p.description = "This is a travel shipment for Shipment - " + shipments[shipment].description + ".  Click the link to open the Canvas App. testtesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttsettesttesttesttesttesttesttesttesttset";
+                         p.description = "This is a travel shipment for Shipment - " + shipments[shipment].description + ".  Click the link to open the Canvas App.";
                     }
                     
                     // Note: we can extend the payload here to include more then just value.
