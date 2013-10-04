@@ -225,7 +225,7 @@
 
                 draw : draw,
                 refresh : refresh,
-                approve : approve,
+                updateShipmentStatus : updateShipmentStatus,
 
                 // Subscriptions to callbacks from publisher...
                 subscriptions : [
