@@ -189,7 +189,8 @@
                 onSuccess : function() {
                     console.log("EH Module onSuccess");
                 },
-                onFailure : function () {
+                onFailure : function (payload) {
+                    console.log(JSON.stringify(payload, null, 4));
                     console.log("EH Module onFailure");
                 },
                 onGetPayload : function () {
