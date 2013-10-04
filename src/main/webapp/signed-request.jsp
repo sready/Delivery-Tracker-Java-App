@@ -30,9 +30,9 @@ POSSIBILITY OF SUCH DAMAGE.
     // Pull the signed request out of the request body and verify/decode it.
     Map<String, String[]> parameters = request.getParameterMap();
     String[] signedRequest = parameters.get("signed_request");
-    String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
+    String yourConsumerSecret=System.getenv("APP_SECRET");
     String signedRequestJson = null;
-    if (signedRequest != null) {
+    if (signedRequest != null && yourConsumerSecret != null && signedRequest == yourConsumerSecret) {
         signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
     }
 %>
