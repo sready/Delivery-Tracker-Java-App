@@ -78,7 +78,7 @@ public class SignedRequest {
         }
 
         //Removed the verification so the app works in any org
-        //verify(secret, algorithm, encodedEnvelope, encodedSig);
+        verify(secret, algorithm, encodedEnvelope, encodedSig);
 
         // If we got this far, then the request was not tampered with.
         // return the request as a Java object
@@ -111,7 +111,7 @@ public class SignedRequest {
         }
 
         //Removed the verification so the app works in any org
-        //verify(secret, algorithm, encodedEnvelope, encodedSig);
+        verify(secret, algorithm, encodedEnvelope, encodedSig);
 
         // If we got this far, then the request was not tampered with.
         // return the request as a JSON string.
@@ -132,7 +132,7 @@ public class SignedRequest {
         throws SecurityException
     {
     	if (secret == null || secret.trim().length() == 0) {
-            throw new IllegalArgumentException("secret is null, did you set your environment variable CANVAS_CONSUMER_SECRET?");
+            throw new IllegalArgumentException("secret is null, did you set your environment variable APP_SECRET?");
         }
 
         SecretKey hmacKey = null;

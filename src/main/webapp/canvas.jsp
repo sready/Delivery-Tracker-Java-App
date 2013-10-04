@@ -36,7 +36,7 @@ POSSIBILITY OF SUCH DAMAGE.
     String[] signedRequest = parameters.get("signed_request");
     String yourConsumerSecret=System.getenv("APP_SECRET");
     System.out.println("WDT...............") ;
-    if (signedRequest != null && yourConsumerSecret != null && signedRequest == yourConsumerSecret) {
+    if (signedRequest != null) {
         CanvasRequest cr = SignedRequest.verifyAndDecode(signedRequest[0], yourConsumerSecret);
         System.out.println("DisplayLocation = " + cr.getContext().getEnvironmentContext().getDisplayLocation());
         if ("Publisher".equals(cr.getContext().getEnvironmentContext().getDisplayLocation())) {

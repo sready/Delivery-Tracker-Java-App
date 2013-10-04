@@ -32,7 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
     String[] signedRequest = parameters.get("signed_request");
     String yourConsumerSecret=System.getenv("APP_SECRET");
     String signedRequestJson = null;
-    if (signedRequest != null && yourConsumerSecret != null && signedRequest == yourConsumerSecret) {
+    if (signedRequest != null) {
         signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
     }
 %>
