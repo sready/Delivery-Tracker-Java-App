@@ -103,7 +103,7 @@ POSSIBILITY OF SUCH DAMAGE.
     	    <div id="radio">
 	            <input type="radio" id="share" name="radio" checked="checked"/><label for="share">Text Post</label>
             	<input type="radio" id="link" name="radio"  /><label for="link">Link Post</label>
-            	<input type="radio" id="approval" name="radio"  /><label for="approval">Approval Post</label>
+            	<input type="radio" id="approval" name="radio"  /><label for="approval">Confirmation Post</label>
     	    </div>
 	    </form>
 	</div>
