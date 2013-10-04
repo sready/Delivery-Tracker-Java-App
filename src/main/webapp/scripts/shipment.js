@@ -200,7 +200,7 @@
                         p.auxText = prettyPrint(shipment);
                     }
                     else if ("link" === action) {
-                        p.feedItemType = "LinkPost";
+                        p.feedItemType = "LinkPost"; 
                         p.auxText = "Please confirm this shipment status: " + shipments[shipment].description;
                         p.url = "https://immense-springs-2619.herokuapp.com/signed-request.jsp?shipment=" + shipment; /* change this to your heroku app */
                         p.urlName = shipments[shipment].description;
