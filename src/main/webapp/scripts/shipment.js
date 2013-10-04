@@ -213,7 +213,7 @@
                          p.developerName =  sr.context.application.developerName;
                          p.thumbnailUrl = "https://cdn1.iconfinder.com/data/icons/VISTA/project_managment/png/48/deliverables.png";
                          p.parameters =  "{\"shipment\":\"" + shipment + "\"}";
-                         p.title =  "Shipment - " +shipments[shipment].description;
+                         p.title = shipments[shipment].description;
                          p.description = "This is a travel shipment for Shipment - " + shipments[shipment].description + ".  Click the link to open the Canvas App.";
                     }
 
