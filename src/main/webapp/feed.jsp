@@ -76,7 +76,7 @@ POSSIBILITY OF SUCH DAMAGE.
             console.log("sr.context.environment.parameters.shipment: " + sr.context.environment.parameters.shipment);
             console.log("urlParams: " + urlParams); 
             console.log("Shipment:" + id);
-            module.approve(id);
+            module.updateShipmentStatus(id);
 
         });
         
@@ -104,8 +104,8 @@ POSSIBILITY OF SUCH DAMAGE.
     </table>
     </div>
     <div class="zen-btn-container">
-    <button class="zen-btn" id="approve">Approve</button>
-    <button class="zen-btn" id="deny">Deny</button>
+    <button class="zen-btn" id="completed">Complete</button>
+    <button class="zen-btn" id="cancelled">Cancelled</button>
     </div>
 
 </div>

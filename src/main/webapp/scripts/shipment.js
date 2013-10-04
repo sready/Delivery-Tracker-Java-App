@@ -99,7 +99,7 @@
                 return text;
             }
 
-            function approve(id) {
+            function updateShipmentStatus(id) {
 
                 $(function() {
                     $("button" )
@@ -107,11 +107,11 @@
                         .click(function( event ) {
                             event.preventDefault();
                             action = $(this).attr("id");
-                            $("#status").empty().append(("approve" === action) ? "Approved" : "Denied");
+                            $("#status").empty().append(("completed" === action) ? "Completed" : "Cancelled");
                         });
                 });
 
-                console.log("Approve...." + id);
+                console.log("Mark Complete...." + id);
                 refresh(id);
             }
 
@@ -201,13 +201,13 @@
                     }
                     else if ("link" === action) {
                         p.feedItemType = "LinkPost";
-                        p.auxText = "Please approve my shipment: " + shipments[shipment].description;
+                        p.auxText = "Please confirm this shipment status: " + shipments[shipment].description;
                         p.url = "https://immense-springs-2619.herokuapp.com/signed-request.jsp?shipment=" + shipment; /* change this to your heroku app */
                         p.urlName = shipments[shipment].description;
                     }
                     else if ("approval" === action) {
                          p.feedItemType = "CanvasPost";
-                         p.auxText = "Please approve this shipment: " + shipments[shipment].description;
+                         p.auxText = "Please confirm this shipment status: " + shipments[shipment].description;
                          p.namespace =  sr.context.application.namespace;
                          p.developerName =  sr.context.application.developerName;
                          p.thumbnailUrl = "https://cdn1.iconfinder.com/data/icons/VISTA/project_managment/png/48/deliverables.png";
