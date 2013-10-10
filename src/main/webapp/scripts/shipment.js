@@ -4,6 +4,7 @@
 
     var action = "share", shipment;
 
+    /* this makes fake data for the canvas app */
     var shipments = {
             123:
             {id : 123, status : "Waiting",  description : "Cellular Accessories and Phones",  date: "12/20/2013",
@@ -47,7 +48,7 @@
                     {truck : "Bus 006", driverNumber : "D2202",
                         departs : {city : "Portland, OR", day : "04/02/2013", time : "08:15 AM"},
                         arrives : {city : "San Francisco, CA", day : "04/05/2013", time : "09:30 AM"}},
-                    {truck : "Box Truck 215", driverNumber : "UA123",
+                    {truck : "Box Truck 215", driverNumber : "D8123",
                         departs : {city : "San Diego, CA", day : "04/10/2013", time : "03:00 PM"},
                         arrives : {city : "San Francisco, CA", day : "04/12/2013", time : "5:30 PM"}}
                 ],
@@ -61,6 +62,7 @@
         instance : function (sr) {
             var payload;
 
+            /* this will revert the table back to its original state if called*/
             function refresh(id) {
                 var v, $tbody;
                 if (!$$.isNil(id)) {
@@ -80,6 +82,7 @@
                 }
             }
 
+            /* this generates the text post information based off of the shipment selected */
             function prettyPrint(id) {
 
                 var it = shipments[id];
@@ -99,6 +102,7 @@
                 return text;
             }
 
+            /* this changes the shipment status in the CanvasPost when you click the button */
             function updateShipmentStatus(id) {
 
                 $(function() {
@@ -115,6 +119,7 @@
                 refresh(id);
             }
 
+            /* this determines to see which row you selected and what kind of post you wanted to make */
             function draw() {
 
                 $("#reservations").chromatable({
@@ -123,6 +128,7 @@
                     scrolling: "yes"
                 });
 
+                /* this grabs information from the shipment selected */
                 $("#reservations").selectable({
                     filter:'tr',
                     selected: function(event, ui){
@@ -132,10 +138,13 @@
 
                         // @review - generate named methods instead (fireEnable())
                         console.log("Fire event from client");
+
+                        /* the line below makes the "Submit" button on the publisher active and clickable for a submit */
                         $$.client.publish(sr.client, {name : 'publisher.setValidForSubmit', payload : true});
                     }
                 });
 
+                /* all of the buttons are styled radio buttons and associated with acitons to perform*/
                 $( "#radio" ).buttonset();
                 $("#radio :radio").click(function(e) {
                     var rawElement = this;
@@ -165,6 +174,7 @@
                 refresh();
             }
             
+            /* these are the handler responses for all of the subscriptions */
             var handlers = {
                 onSetupPanel : function(payload) {
                 	console.log("EH Module setupPanel..", payload);
@@ -172,6 +182,12 @@
                 onShowPanel : function(payload) {
                     console.log("EH Module showPanel", payload);
                 },
+
+                /* this subscription is for when you click out of the Canvas app but don't refresh the page
+                * and you want the Canvas to go back to its original state. This is most applicable in
+                * Canvas in a publisher action in Aloha where you can toggle between different actions
+                * on the same screen 
+                */
                 onClearPanelState : function(payload) {
                     console.log("EH Module clearPanelState");
                     // Clear the selected reservation
@@ -190,9 +206,14 @@
                     console.log("EH Module onSuccess");
                 },
                 onFailure : function (payload) {
+                    /* This logs the error to the console. Currently you only see console error in the standard (non-mobile) publisher */
                     console.log(JSON.stringify(payload, null, 4));
                     console.log("EH Module onFailure");
                 },
+
+                /* when you select a shipment, a type of post, and then click submit, this will take that payload (selection data) 
+                * and create the appopriate ype of post out of it 
+                */
                 onGetPayload : function () {
                     var p = {};
                     console.log("EH Module getPayload");
@@ -206,6 +227,15 @@
                         p.url = "https://immense-springs-2619.herokuapp.com/signed-request.jsp?shipment=" + shipment; /* change this to your heroku app */
                         p.urlName = shipments[shipment].description;
                     }
+
+                    /* this piece creates the CanvasPost. Things to note:
+                    * p.feedItemType = CanvasPost
+                    * p.auxText > cannot be more than 255 chars 
+                    * p.namespace/developerName > can be pulled from signed request or manually from your org/connected app
+                    * p.thumbnailUrl = the icon you see in the chatter feed
+                    * p.parameters > can be passed into the CanvasApp in the environment context 
+                    * p.Title > cannot be more than 40 chars 
+                    */
                     else if ("approval" === action) {
                          p.feedItemType = "CanvasPost";
                          p.auxText = "Please confirm this shipment status: " + shipments[shipment].description;

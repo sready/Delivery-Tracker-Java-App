@@ -77,7 +77,7 @@ public class SignedRequest {
             throw new SecurityException(String.format("Error [%s] deserializing JSON to Object [%s]", e.getMessage(), CanvasRequest.class.getName()), e);
         }
 
-        //Removed the verification so the app works in any org
+        //This line verifies the Secret
         verify(secret, algorithm, encodedEnvelope, encodedSig);
 
         // If we got this far, then the request was not tampered with.

@@ -39,15 +39,25 @@ POSSIBILITY OF SUCH DAMAGE.
     if (signedRequest != null) {
         CanvasRequest cr = SignedRequest.verifyAndDecode(signedRequest[0], yourConsumerSecret);
         System.out.println("DisplayLocation = " + cr.getContext().getEnvironmentContext().getDisplayLocation());
+
+        /* this determines that the environment you are viewing from is the publisher therefore displays the page associated with that view */
         if ("Publisher".equals(cr.getContext().getEnvironmentContext().getDisplayLocation())) {
             %><jsp:forward page="publisher.jsp"/><%
         }
+
+        /* this determines that the environment you are viewing from is the chatter feed therefore displays the page associated with that view */
         else if ("ChatterFeed".equals(cr.getContext().getEnvironmentContext().getDisplayLocation())) {
             %><jsp:forward page="feed.jsp"/><%
         }
+
+        /* this determines that the environment you are viewing from is the anywhere else in salesforce (ie VF/Chatter tab/Canvas App
+        * Previewer/Global Action etc) therefore displays the page associated with that view 
+        */
         else {
             %><jsp:forward page="signed-request.jsp"/><%
         }
+
+    /* this else statement runs when you are not viewing within Salesforce and no signed_request is passed in */
     } else {
         %><jsp:forward page="welcome.jsp"/><%
     }
