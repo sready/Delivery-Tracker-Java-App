@@ -91,7 +91,7 @@ This snippet makes a post to chatter of type "CanvasPost." You can see that it i
      $$.client.publish(sr.client, {name : 'publisher.setValidForSubmit', payload : true});
 
   **Code Snippet #3: shipment.js**
-  The snippet above uses the "Submit" (ie publish) button to publish the feeditem to the chatter feed. Depending on which type of post you selected, it will post a different type (text, link, Canvas). 
+  This snippet uses the "Submit" (ie publish) button to publish the feeditem to the chatter feed. Depending on which type of post you selected, it will post a different type (text, link, Canvas). 
 
   $$ > the Sfdc.canvas
   {name : 'publisher.setPayload', payload : p} > publishes the action using the submit button, passes the p (FeedItem) to chatter 
