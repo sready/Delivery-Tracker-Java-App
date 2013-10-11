@@ -69,7 +69,7 @@ Salesforce Canvas is a mashup framework for consuming third party applications w
 ### Important code snippets 
 
 **Code Snippet #1: shipment.js**
-This snippet makes a post to chatter of type "CanvasPost." You can see that it is dynamically setting all of the post values, and grabs the canvas app information from the signed request. You also have the ability to pass in parameters which will be appended to the URL to be used in the chatter feed canvas app.
+This snippet makes a post to Chatter of type "CanvasPost." You can see that it is dynamically setting all of the post values, and grabs the Canvas app information from the signed request. You also have the ability to pass in parameters which will be appended to the URL to be used in the Chatter feed Canvas app.
 
     else if ("approval" === action) {
         p.feedItemType = "CanvasPost";
@@ -91,7 +91,7 @@ This snippet makes a post to chatter of type "CanvasPost." You can see that it i
      $$.client.publish(sr.client, {name : 'publisher.setValidForSubmit', payload : true});
 
   **Code Snippet #3: shipment.js**
-  This snippet uses the "Submit" (ie publish) button to publish the feeditem to the chatter feed. Depending on which type of post you selected, it will post a different type (text, link, Canvas). 
+  This snippet uses the "Submit" (ie publish) button to publish the FeedItem to the Chatter feed. Depending on which type of post you selected, it will post a different type (text, link, Canvas). 
 
   $$ > the Sfdc.canvas
   {name : 'publisher.setPayload', payload : p} > publishes the action using the submit button, passes the p (FeedItem) to chatter 

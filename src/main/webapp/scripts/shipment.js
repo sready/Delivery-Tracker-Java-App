@@ -139,7 +139,7 @@
                         // @review - generate named methods instead (fireEnable())
                         console.log("Fire event from client");
 
-                        /* the line below makes the "Submit" button on the publisher active and clickable for a submit */
+                        /* the line below makes the "Share" button on the publisher active and clickable for a submit */
                         $$.client.publish(sr.client, {name : 'publisher.setValidForSubmit', payload : true});
                     }
                 });
@@ -183,9 +183,9 @@
                     console.log("EH Module showPanel", payload);
                 },
 
-                /* this subscription is for when you click out of the Canvas app but don't refresh the page
-                * and you want the Canvas to go back to its original state. This is most applicable in
-                * Canvas in a publisher action in Aloha where you can toggle between different actions
+                /* this subscription is for when you click out of the canvas app but don't refresh the page
+                * and you want the canvas to go back to its original state. This is most applicable in
+                * canvas in a publisher action in Aloha where you can toggle between different actions
                 * on the same screen 
                 */
                 onClearPanelState : function(payload) {
@@ -211,7 +211,7 @@
                     console.log("EH Module onFailure");
                 },
 
-                /* when you select a shipment, a type of post, and then click submit, this will take that payload (selection data) 
+                /* when you select a shipment, a type of post, and then click share, this will take that payload (selection data) 
                 * and create the appopriate ype of post out of it 
                 */
                 onGetPayload : function () {
@@ -224,7 +224,11 @@
                     else if ("link" === action) {
                         p.feedItemType = "LinkPost"; 
                         p.auxText = "Please confirm this shipment status: " + shipments[shipment].description;
-                        p.url = "https://immense-springs-2619.herokuapp.com/signed-request.jsp?shipment=" + shipment; /* change this to your heroku app */
+
+                        /* 
+                        * change this to your heroku app url 
+                        */
+                        p.url = "https://[YOUR_APP_URL].herokuapp.com/signed-request.jsp?shipment=" + shipment; 
                         p.urlName = shipments[shipment].description;
                     }
 
